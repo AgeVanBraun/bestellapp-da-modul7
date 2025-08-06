@@ -38,6 +38,7 @@ function getBasketTemplate(){
             <span>Zwischensumme</span>
             <span>Lieferkosten</span>
             <span>Gesamt</span>
+            <button class="order-btn">jetzt bestellen</button>
 
             `
 }
