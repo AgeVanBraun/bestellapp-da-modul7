@@ -32,13 +32,26 @@ function getDrinksTemplate(indexOffers) {
             </div>`;
 }
 function getBasketTemplate(){
-    return `<h2>Warenkorb</h2>
-            <span>Anlieferung</span>
+    return `<h2 class="center">Warenkorb</h2>
+            <div class="separator-basket"></div>
+            <div class="format-basket-content">
+            <span class="font-bold">Anlieferung:</span><span class="font-bold">0,00 €</span>
+            </div>
+            <div class="separator-basket"></div>
+            <div id="article-basket">
             <span>Platzhalter Artikel</span>
-            <span>Zwischensumme</span>
-            <span>Lieferkosten</span>
-            <span>Gesamt</span>
-            <button class="order-btn">jetzt bestellen</button>
-
+            </div>
+            <div class="separator-basket"></div>
+            <div class="format-basket-content">
+            <span class="font-gray">Lieferkosten:</span><span class="font-bold font-gray">0,00 €</span>
+            </div>
+            <div class="format-basket-content">
+            <span class="font-gray">Zwischensumme:</span><span class="font-bold font-gray">0,00 €</span>
+            </div>
+            <div class="separator-basket"></div>
+            <div class="format-basket-content">
+            <span class="font-bold">Gesamtkosten:</span><span class="font-bold">0,00 €</span>
+            </div>
+            <button class="order-btn font-bold">jetzt bestellen</button>
             `
 }

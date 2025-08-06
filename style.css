@@ -51,15 +51,21 @@ a:hover {
   flex-grow: 1;
   width: 300px;
   padding: 8px;
+
   border-right: 1px solid rgba(128, 128, 128, 0.5);
 }
 .basket {
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
   gap: 8px;
   position: sticky;
   top: 10px;
+
+}
+.separator-basket {
+  height: 1px;
+  width: 90%;
+  background-color: rgba(128, 128, 128, 0.5);
 }
 .order-btn {
   font-size: 1.2rem;
@@ -70,6 +76,7 @@ a:hover {
   cursor: pointer;
   width: max-content;
   transition: transform 0.2s ease;
+  margin: 1em auto;
 }
 .order-btn:hover {
   color: whitesmoke;
@@ -167,4 +174,18 @@ footer {
   height: 128px;
   background-color: rgb(40, 42, 54);
   font-size: 1.2rem;
+}
+.center{
+    text-align: center;
+}
+.font-gray{
+    color: gray;
+}
+.font-bold{
+    font-weight: bold;
+}
+.format-basket-content{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 32px;
 }
