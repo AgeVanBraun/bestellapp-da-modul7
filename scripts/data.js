@@ -1,3 +1,5 @@
+let basket = [];
+
 let myOffers = {
   "Pizzas": [
     {

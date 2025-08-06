@@ -17,6 +17,10 @@ nav {
 h1 {
   font-size: 2rem;
 }
+h3{
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
 p {
   padding-top: 16px;
   padding-bottom: 16px;
@@ -60,7 +64,6 @@ a:hover {
   gap: 8px;
   position: sticky;
   top: 10px;
-
 }
 .separator-basket {
   height: 1px;
@@ -175,17 +178,35 @@ footer {
   background-color: rgb(40, 42, 54);
   font-size: 1.2rem;
 }
-.center{
-    text-align: center;
+.center {
+  text-align: center;
 }
-.font-gray{
-    color: gray;
+.font-gray {
+  color: gray;
 }
-.font-bold{
-    font-weight: bold;
+.font-bold {
+  font-weight: bold;
 }
-.format-basket-content{
-    display: flex;
-    justify-content: space-between;
-    margin-right: 32px;
+.format-basket-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 32px;
+}
+.amount-btn {
+  font-size: 1.5rem;
+  height: 30px;
+  width: 30px;
+  color: rgb(108, 192, 94);
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  background-color: whitesmoke;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.amount-btn:hover {
+background-color: rgb(234, 234, 234);
+  transform: scale(1.1);
+}
+.amount-btn:active {
+  transform: scale(1);
 }

@@ -32,7 +32,18 @@ function renderDrinks() {
   }
 }
 function renderBasket() {
-    let contentRef = document.getElementById('basket');
+  let contentRef = document.getElementById('basket');
   contentRef.innerHTML = getBasketTemplate();
+}
 
+function addArticle(category, index) {
+  let article = myOffers[category][index];
+  article.amount++
+
+  let contentRef = document.getElementById('order_basket');
+  contentRef.innerHTML = getArticleTemplate(article);
+}
+
+function addAmountBtn(article) {
+  article.amount++;
 }
