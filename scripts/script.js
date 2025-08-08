@@ -68,8 +68,8 @@ function addArticle(category, index) {
   renderBasket();
 }
 
-function changeAmount(index, delta) {
-  basket[index].amount += delta;
+function changeAmount(index, change) {
+  basket[index].amount += change;
 
   if (basket[index].amount <= 0) {
     basket.splice(index, 1);
