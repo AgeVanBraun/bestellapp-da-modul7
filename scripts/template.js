@@ -35,13 +35,16 @@ function getBasketTemplate(indexOffers){
     return `<h2 class="center">Warenkorb</h2>
             <div class="separator-basket"></div>
             <div class="format-basket-content">
-            <span class="font-bold">Anlieferung:</span><span class="font-bold">0,00 €</span>
+            <span class="font-bold">Anlieferung:</span>
+            <input type="checkbox" id="check">
+            <label for="check" class="switch-btn" onclick="check()"></label>
+            <span class="font-bold" id="delivery">0,00 €</span>
             </div>
             <div class="separator-basket"></div>
             <div id="order_basket"></div>
             <div class="separator-basket"></div>
             <div class="format-basket-content">
-            <span class="font-gray">Lieferkosten:</span><span class="font-bold font-gray">0,00 €</span>
+            <span class="font-gray">Lieferkosten:</span><span class="font-bold font-gray" id="delivery_costs">0,00 €</span>
             </div>
             <div class="format-basket-content">
             <span class="font-gray">Zwischensumme:</span><span class="font-bold font-gray">0,00 €</span>
@@ -54,14 +57,15 @@ function getBasketTemplate(indexOffers){
             `;
 }
 
-function getArticleTemplate(article) {
+function getArticleTemplate(article, index) {
 return     `<div class="basket-item">
             <h3>${article.name}</h3>
             <div class="format-basket-content">
-            <button class="amount-btn">-</button>
+            <button onclick="changeAmount(${index}, -1)" class="amount-btn">-</button>
             <span>${article.amount} x</span>
-            <button onclick="addAmountBtn()" class="amount-btn">+</button>
+            <button onclick="changeAmount(${index}, 1)" class="amount-btn">+</button>
             <span>${article.price.toFixed(2).replace('.', ',')} €</span>
+            <img class="trash-img" src=./assets/icons/trash.png alt="Bild von einer Pizza">
             </div>
             </div>
             `;
