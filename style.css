@@ -210,3 +210,15 @@ background-color: rgb(234, 234, 234);
 .amount-btn:active {
   transform: scale(1);
 }
+.trash-img{
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.trash-img:hover{
+  transform: scale(1.1);
+}
+.trash-img:active {
+  transform: scale(1);
+}
