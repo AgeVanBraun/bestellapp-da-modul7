@@ -65,7 +65,7 @@ return     `<div class="basket-item">
             <span>${article.amount} x</span>
             <button onclick="changeAmount(${index}, 1)" class="amount-btn">+</button>
             <span>${article.price.toFixed(2).replace('.', ',')} €</span>
-            <img class="trash-img" src=./assets/icons/trash.png alt="Bild von einer Pizza">
+            <img onclick="trashArticle(${index})" class="trash-img" src=./assets/icons/trash.png alt="Bild von einer Pizza">
             </div>
             </div>
             `;

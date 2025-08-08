@@ -44,7 +44,6 @@ function renderBasket() {
 }
 
 function addArticle(category, index) {
-  let article = myOffers[category][index];
   let checkMyOffers = myOffers[category][index];
   let foundIndex = -1;
 
@@ -89,4 +88,11 @@ function check() {
     document.getElementById('delivery_costs').innerHTML = costs + ' €';
     document.getElementById('delivery').innerHTML = costs + ' €';
   }
+}
+
+function trashArticle(index) {
+  if (basket[index].amount >= 1) {
+    basket.splice(index, 1);
+  }
+  renderBasket();
 }
