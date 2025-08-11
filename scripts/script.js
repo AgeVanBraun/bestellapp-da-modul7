@@ -7,6 +7,14 @@ function init() {
   renderBasket();
 }
 
+let switchActive = false;
+
+function toggleBasketBtn() {
+  document.getElementById('basket_wrapper').classList.toggle('d_none');
+  document.getElementById('logo_middle').classList.toggle('logo-middle-full');
+  document.getElementById('main_content').classList.toggle('main-content-full');
+}
+
 function renderPizzas() {
   let contentRef = document.getElementById('pizzas_content');
   contentRef.innerHTML = '';
@@ -41,6 +49,8 @@ function renderBasket() {
   for (let index = 0; index < basket.length; index++) {
     orderRef.innerHTML += getArticleTemplate(basket[index], index);
   }
+
+  document.getElementById('check').checked = switchActive;
 }
 
 function addArticle(category, index) {
@@ -78,8 +88,8 @@ function changeAmount(index, change) {
 
 function check() {
   let checkSwitch = document.getElementById('check');
-  let switchActive = checkSwitch.checked;
   let costs = 4.99;
+  switchActive = checkSwitch.checked;
 
   if (switchActive) {
     document.getElementById('delivery_costs').innerHTML = '0,00 €';

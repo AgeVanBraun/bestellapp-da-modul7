@@ -31,7 +31,7 @@ function getDrinksTemplate(indexOffers) {
                 </div>
             </div>`;
 }
-function getBasketTemplate(indexOffers){
+function getBasketTemplate(){
     return `<h2 class="center">Warenkorb</h2>
             <div class="separator-basket"></div>
             <div class="format-basket-content">
@@ -41,7 +41,9 @@ function getBasketTemplate(indexOffers){
             <span class="font-bold" id="delivery">0,00 €</span>
             </div>
             <div class="separator-basket"></div>
+
             <div id="order_basket"></div>
+            <p>noch keine Artikel hinzugefügt!</p>
             <div class="separator-basket"></div>
             <div class="format-basket-content">
             <span class="font-gray">Lieferkosten:</span><span class="font-bold font-gray" id="delivery_costs">0,00 €</span>

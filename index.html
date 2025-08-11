@@ -15,16 +15,20 @@
 
   <body onload="init()">
     <header>
+      <div class="logo-display">
       <img class="logo-img" src="./assets/img/Logo.png" alt="" />
+      <img onclick="toggleBasketBtn()" class="shopping-icon-img" src="./assets/icons/shopping-cart.png" alt="">
+      </div>
     </header>
     <div class="content-wrapper">
-      <section class="main-content">
+      <section class="main-content" id="main_content">
         <div class="title-nav-content">
           <img class="header-img" src="./assets/img/header.jpg" alt="Titel Bild" />
           <img
             class="logo-middle"
             src="./assets/img/pizza-logo-middle.png"
             alt="Kleines Logo in der mitte"
+            id="logo_middle"
           />
           <div class="slogan-title">
             <h1>Deine Lieblingspizza – nur einen Klick entfernt.</h1>
@@ -46,7 +50,7 @@
           <div class="drinks-content" id="drinks_content"></div>
         </div>
       </section>
-      <section class="basket-wrapper">
+      <section class="basket-wrapper" id="basket_wrapper">
         <div class="basket" id="basket"></div>
       </section>
     </div>
