@@ -32,28 +32,23 @@ function getDrinksTemplate(indexOffers) {
             </div>`;
 }
 function getBasketTemplate(){
-    return `<h2 class="center">Warenkorb</h2>
+    return `
             <div class="separator-basket"></div>
-            <div class="format-basket-content">
-            <span class="font-bold">Anlieferung:</span>
-            <input type="checkbox" id="check">
-            <label for="check" class="switch-btn" onclick="check()"></label>
-            <span class="font-bold" id="delivery">0,00 €</span>
-            </div>
-            <div class="separator-basket"></div>
+            <div class="format-basket-content"></div>
+            <div id="order_basket" class="order-basket"></div>
 
-            <div id="order_basket"></div>
-            <p>noch keine Artikel hinzugefügt!</p>
             <div class="separator-basket"></div>
             <div class="format-basket-content">
             <span class="font-gray">Lieferkosten:</span><span class="font-bold font-gray" id="delivery_costs">0,00 €</span>
             </div>
             <div class="format-basket-content">
-            <span class="font-gray">Zwischensumme:</span><span class="font-bold font-gray">0,00 €</span>
+            <span class="font-gray">Zwischensumme:</span>
+            <span class="font-bold font-gray" id="subtotal">0,00 €</span>
             </div>
             <div class="separator-basket"></div>
             <div class="format-basket-content">
-            <span class="font-bold">Gesamtkosten:</span><span class="font-bold">0,00 €</span>
+            <span class="font-bold">Gesamtkosten:</span>
+            <span class="font-bold" id="total_costs">0,00 €</span>
             </div>
             <button class="order-btn font-bold">jetzt bestellen</button>
             `;

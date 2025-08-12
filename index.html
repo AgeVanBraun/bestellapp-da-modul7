@@ -16,8 +16,13 @@
   <body onload="init()">
     <header>
       <div class="logo-display">
-      <img class="logo-img" src="./assets/img/Logo.png" alt="" />
-      <img onclick="toggleBasketBtn()" class="shopping-icon-img" src="./assets/icons/shopping-cart.png" alt="">
+        <img class="logo-img" src="./assets/img/Logo.png" alt="" />
+        <img
+          onclick="toggleBasketBtn()"
+          class="shopping-icon-img"
+          src="./assets/icons/shopping-cart.png"
+          alt=""
+        />
       </div>
     </header>
     <div class="content-wrapper">
@@ -51,12 +56,21 @@
         </div>
       </section>
       <section class="basket-wrapper" id="basket_wrapper">
+        <div class="basket-top">
+          <h2 class="center">Warenkorb</h2>
+          <div class="format-basket-content">
+            <span class="font-bold">Anlieferung:</span>
+            <input type="checkbox" id="check" onclick="check()" />
+            <label for="check" class="switch-btn"></label>
+            <span class="font-bold" id="delivery">0,00 €</span>
+          </div>
+        </div>
         <div class="basket" id="basket"></div>
       </section>
     </div>
     <footer>
-        <a href="./index.html">Home</a>
+      <a href="./index.html">Home</a>
     </footer>
-    <div id="overlay_cart" class="overlay d-none"></div>
+    <div id="overlay_cart" class="overlay d_none"></div>
   </body>
 </html>

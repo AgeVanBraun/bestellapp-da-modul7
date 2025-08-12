@@ -60,6 +60,15 @@ a:hover {
 .basket-wrapper {
   flex-grow: 1;
   width: 300px;
+
+}
+.basket-top {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+  gap: 8px;
+
+
 }
 .basket {
   display: flex;
@@ -84,6 +93,7 @@ a:hover {
   width: max-content;
   transition: transform 0.2s ease;
   margin: 1em auto;
+  color: whitesmoke;
 }
 .order-btn:hover {
   color: whitesmoke;
@@ -140,7 +150,7 @@ a:hover {
     0px 32px 24px rgba(3, 7, 18, 0.08);
 }
 .offers-content {
-  width: 160px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -199,6 +209,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-right: 32px;
+
 }
 .amount-btn {
   font-size: 1.5rem;
@@ -251,4 +262,21 @@ background-color: rgb(234, 234, 234);
 }
 .logo-middle-full{
   left: calc(50%);
+}
+.order-basket{
+max-height: 800px;
+  overflow-y: auto;
+}
+
+.overlay{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position:fixed;
+  background-color: whitesmoke;
+  overflow-y: auto; 
+
+
+
 }

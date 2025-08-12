@@ -46,11 +46,24 @@ function renderBasket() {
   let orderRef = document.getElementById('order_basket');
   orderRef.innerHTML = '';
 
+  let subtotal = 0;
+  let deliveryCosts = 0;
+
   for (let index = 0; index < basket.length; index++) {
     orderRef.innerHTML += getArticleTemplate(basket[index], index);
+
+    subtotal += basket[index].price * basket[index].amount;
+
   }
 
-  document.getElementById('check').checked = switchActive;
+  let checkSwitch = document.getElementById('check');
+  if (checkSwitch && checkSwitch.checked) {
+    deliveryCosts = 4.99;
+  }
+  document.getElementById('delivery_costs').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('subtotal').innerHTML = subtotal.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('total_costs').innerHTML = (subtotal + deliveryCosts).toFixed(2).replace('.', ',') + ' €';
 }
 
 function addArticle(category, index) {
@@ -83,21 +96,13 @@ function changeAmount(index, change) {
   if (basket[index].amount <= 0) {
     basket.splice(index, 1);
   }
+
   renderBasket();
 }
 
 function check() {
-  let checkSwitch = document.getElementById('check');
-  let costs = 4.99;
-  switchActive = checkSwitch.checked;
 
-  if (switchActive) {
-    document.getElementById('delivery_costs').innerHTML = '0,00 €';
-    document.getElementById('delivery').innerHTML = '0,00 €';
-  } else {
-    document.getElementById('delivery_costs').innerHTML = costs + ' €';
-    document.getElementById('delivery').innerHTML = costs + ' €';
-  }
+  renderBasket();
 }
 
 function trashArticle(index) {
