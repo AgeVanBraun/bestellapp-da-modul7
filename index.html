@@ -3,13 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/assets.css" />
+    <link rel="stylesheet" href="./styles/overlay.css" />
     <link rel="stylesheet" href="./styles/font.css" />
     <link rel="stylesheet" href="./styles/standard.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="./scripts/template.js"></script>
+    <link rel="stylesheet" href="./styles/responsiv.css">
+
+    <script src="./scripts/template.js" defer></script>
     <script src="./scripts/data.js"></script>
     <script src="./scripts/script.js" defer></script>
+
     <link rel="shortcut icon" href="./assets/icons/favicon.ico" type="image/x-icon" />
+
     <title>Bestellapp</title>
   </head>
 
@@ -26,11 +33,11 @@
       </div>
     </header>
     <div class="content-wrapper">
-      <section class="main-content" id="main_content">
+      <section class="main-content main-content-full" id="main_content">
         <div class="title-nav-content">
           <img class="header-img" src="./assets/img/header.jpg" alt="Titel Bild" />
           <img
-            class="logo-middle"
+            class="logo-middle logo-middle-full"
             src="./assets/img/pizza-logo-middle.png"
             alt="Kleines Logo in der mitte"
             id="logo_middle"
@@ -53,9 +60,12 @@
           <div class="salads-content" id="salads_content"></div>
           <h1 class="offers-title">Getränke</h1>
           <div class="drinks-content" id="drinks_content"></div>
+          <div class="shopping-cart-container">
+            <button onclick="toggleResCart()" class="shopping-cart-btn">Warenkorb</button>
+          </div>
         </div>
       </section>
-      <section class="basket-wrapper" id="basket_wrapper">
+      <section class="basket-wrapper d_none" id="basket_wrapper">
         <div class="basket-top">
           <h2 class="center">Warenkorb</h2>
           <div class="format-basket-content">
@@ -71,6 +81,19 @@
     <footer>
       <a href="./index.html">Home</a>
     </footer>
-    <div id="overlay_cart" class="overlay d_none"></div>
+
+    <div id="overlay" class="overlay d_none">
+      <div class="shopping-cart-overlay">
+        <button onclick="toggleResCart()" class="shopping-cart-overlay-btn">Warenkorb</button>
+        <div class="format-basket-content">
+          <span class="font-bold">Anlieferung:</span>
+          <input type="checkbox" id="check_overlay" />
+          <label for="check_overlay" class="switch-btn" onclick="check('overlay')"></label>
+          <span class="font-bold" id="delivery-overlay">0,00 €</span>
+        </div>
+        <div id="overlay_basket" class="overlay-basket"></div>
+
+      </div>
+    </div>
   </body>
 </html>

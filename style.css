@@ -23,9 +23,9 @@ nav {
 h1 {
   font-size: 2rem;
 }
-h3{
-    margin-top: 16px;
-    margin-bottom: 16px;
+h3 {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 p {
   padding-top: 16px;
@@ -52,7 +52,6 @@ a:hover {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
-
 }
 .main-content {
   width: calc(100% - 300px);
@@ -60,15 +59,12 @@ a:hover {
 .basket-wrapper {
   flex-grow: 1;
   width: 300px;
-
 }
 .basket-top {
   display: flex;
   flex-direction: column;
   margin: 8px;
   gap: 8px;
-
-
 }
 .basket {
   display: flex;
@@ -83,26 +79,7 @@ a:hover {
   width: 90%;
   background-color: rgba(128, 128, 128, 0.5);
 }
-.order-btn {
-  font-size: 1.2rem;
-  background-color: rgb(108, 192, 94);
-  border: 0;
-  padding: 8px 16px 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  width: max-content;
-  transition: transform 0.2s ease;
-  margin: 1em auto;
-  color: whitesmoke;
-}
-.order-btn:hover {
-  color: whitesmoke;
-  background-color: rgb(107, 191, 93);
-  transform: scale(1.1);
-}
-.order-btn:active {
-  transform: scale(1);
-}
+
 .logo-img {
   margin: 16px;
   height: 64px;
@@ -138,6 +115,10 @@ a:hover {
   height: 32px;
   margin-left: 16px;
 }
+.offers {
+  max-width: 100%;
+  margin: 8px;
+}
 .offers-box {
   margin-top: 32px;
   margin-bottom: 32px;
@@ -150,7 +131,6 @@ a:hover {
     0px 32px 24px rgba(3, 7, 18, 0.08);
 }
 .offers-content {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -158,26 +138,7 @@ a:hover {
   margin-top: 8px;
   margin-left: 8px;
 }
-.box-btn {
-  font-size: 2.5rem;
-  height: 50px;
-  width: 50px;
-  color: rgb(108, 192, 94);
-  border-radius: 0;
-  border-left: 1px solid rgba(128, 128, 128, 0.5);
-  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
-  border-right: 0 solid rgba(128, 128, 128, 0.5);
-  border-top: 0 solid rgba(128, 128, 128, 0.5);
-  background-color: whitesmoke;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  transition: transform 0.3s ease;
-}
-.box-btn:hover {
-  transform: rotate(0.5turn);
-  border: 0;
-}
+
 .offers-img {
   position: absolute;
   right: 0;
@@ -190,7 +151,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 64px;
+  margin-top: 32px;
   height: 128px;
   background-color: rgb(40, 42, 54);
   font-size: 1.2rem;
@@ -209,74 +170,58 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-right: 32px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
 
-}
-.amount-btn {
-  font-size: 1.5rem;
-  height: 30px;
-  width: 30px;
-  color: rgb(108, 192, 94);
-  border: 1px solid rgba(128, 128, 128, 0.5);
-  background-color: whitesmoke;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-.amount-btn:hover {
-background-color: rgb(234, 234, 234);
-  transform: scale(1.1);
-}
-.amount-btn:active {
-  transform: scale(1);
-}
-.trash-img{
+.trash-img {
   height: 40px;
   width: auto;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-.trash-img:hover{
+.trash-img:hover {
   transform: scale(1.1);
 }
 .trash-img:active {
   transform: scale(1);
 }
-.shopping-icon-img{
+.shopping-icon-img {
   margin-right: 32px;
   height: 32px;
   filter: invert();
   transition: transform 0.3s ease;
   cursor: pointer;
 }
-.shopping-icon-img:hover{
+.shopping-icon-img:hover {
   transform: scale(1.2);
 }
 .shopping-icon-img:active {
   transform: scale(1);
 }
 
-.d_none {
-  display: none;
-}
-.main-content-full{
+.main-content-full {
   width: 100%;
 }
-.logo-middle-full{
+.logo-middle-full {
   left: calc(50%);
 }
-.order-basket{
-max-height: 800px;
+.order-basket {
+  max-height: 800px;
   overflow-y: auto;
 }
 
-.overlay{
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position:fixed;
-  background-color: whitesmoke;
-  overflow-y: auto; 
-
-
-
+.shopping-cart-btn {
+  position: sticky;
+  bottom: 32px;
+  background-color: rgb(0, 105, 218);
+  border: 0;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 3rem;
+  height: 64px;
+  width: 100%;
+}
+.shopping-cart-container {
+  display: none;
 }
