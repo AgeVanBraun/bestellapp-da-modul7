@@ -36,34 +36,34 @@ function getBasketTemplate(){
             <div class="separator-basket"></div>
             <div class="format-basket-content"></div>
             <div id="order_basket" class="order-basket"></div>
-
             <div class="separator-basket"></div>
-            <div class="format-basket-content">
-            <span class="font-gray">Lieferkosten:</span><span class="font-bold font-gray" id="delivery_costs">0,00 €</span>
-            </div>
-            <div class="format-basket-content">
-            <span class="font-gray">Zwischensumme:</span>
-            <span class="font-bold font-gray" id="subtotal">0,00 €</span>
-            </div>
+                <div class="format-basket-content">
+                    <span class="font-gray">Lieferkosten:</span>
+                    <span class="font-bold font-gray" id="delivery_costs">0,00 €</span>
+                </div>
+                <div class="format-basket-content">
+                    <span class="font-gray">Zwischensumme:</span>
+                    <span class="font-bold font-gray" id="subtotal">0,00 €</span>
+                </div>
             <div class="separator-basket"></div>
-            <div class="format-basket-content">
-            <span class="font-bold">Gesamtkosten:</span>
-            <span class="font-bold" id="total_costs">0,00 €</span>
-            </div>
+                <div class="format-basket-content">
+                    <span class="font-bold">Gesamtkosten:</span>
+                    <span class="font-bold" id="total_costs">0,00 €</span>
+                </div>
             <button class="order-btn font-bold">jetzt bestellen</button>
             `;
 }
 
 function getArticleTemplate(article, index) {
 return     `<div class="basket-item">
-            <h3>${article.name}</h3>
-            <div class="format-basket-content">
-            <button onclick="changeAmount(${index}, -1)" class="amount-btn">-</button>
-            <span>${article.amount} x</span>
-            <button onclick="changeAmount(${index}, 1)" class="amount-btn">+</button>
-            <span>${article.price.toFixed(2).replace('.', ',')} €</span>
-            <img onclick="trashArticle(${index})" class="trash-img" src=./assets/icons/trash.png alt="Bild von einer Pizza">
-            </div>
+                <h3>${article.name}</h3>
+                <div class="format-basket-content">
+                    <button onclick="changeAmount(${index}, -1)" class="amount-btn">-</button>
+                    <span>${article.amount} x</span>
+                    <button onclick="changeAmount(${index}, 1)" class="amount-btn">+</button>
+                    <span>${article.price.toFixed(2).replace('.', ',')} €</span>
+                    <img onclick="trashArticle(${index})" class="trash-img" src=./assets/icons/trash.png alt="Bild von einer Pizza">
+                </div>
             </div>
             `;
 }
