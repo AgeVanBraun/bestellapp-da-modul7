@@ -1,0 +1,21 @@
+@media (max-width: 900px) {
+  span {
+    max-width: 150px;
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .shopping-icon-img {
+    display: none;
+  }
+  .shopping-cart-container {
+    display: inline;
+  }
+}
