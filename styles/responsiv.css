@@ -19,3 +19,11 @@
     display: inline;
   }
 }
+
+@media (max-width: 900px) {
+  span {
+    max-width: 140px;
+    font-size: 14px;
+  }
+
+}
