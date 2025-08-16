@@ -33,10 +33,10 @@
   cursor: pointer;
   position: absolute;
   right: 0;
-  transition: transform 0.3s ease;
+  transform: scale(1.1);
 }
-.box-btn:hover {
-  transform: rotate(0.5turn);
+.box-btn:active {
+  transform: scale(1);
   border: 0;
 }
 .amount-btn {
