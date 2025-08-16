@@ -70,8 +70,8 @@
           <h2 class="center">Warenkorb</h2>
           <div class="format-basket-content">
             <span class="font-bold">Anlieferung:</span>
-            <input type="checkbox" id="check" onclick="check()" />
-            <label for="check" class="switch-btn"></label>
+            <input type="checkbox" id="check_main" onclick="check('main')" />
+            <label for="check_main" class="switch-btn"></label>
             <span class="font-bold" id="delivery">0,00 €</span>
           </div>
         </div>
@@ -80,7 +80,7 @@
     </div>
     <footer>
       <a class="footer-a" href="#home">Home</a>
-      
+
     </footer>
 
     <div id="overlay" class="overlay d_none">
@@ -88,13 +88,18 @@
         <button onclick="toggleResCart()" class="shopping-cart-overlay-btn">Warenkorb</button>
         <div class="format-basket-content">
           <span class="font-bold">Anlieferung:</span>
-          <input type="checkbox" id="check_overlay" />
-          <label for="check_overlay" class="switch-btn" onclick="check('overlay')"></label>
-          <span class="font-bold" id="delivery-overlay">0,00 €</span>
+          <input type="checkbox" id="check_overlay" onclick="check('overlay')" />
+          <label for="check_overlay" class="switch-btn" ></label>
+          <span class="font-bold" id="delivery_overlay">0,00 €</span>
         </div>
         <div id="overlay_basket" class="overlay-basket"></div>
-
       </div>
     </div>
+    <div id="submit_overlay" class="submit-overlay d_none">
+         <h1>Deine Bestellung...</h1>
+         <p>... ist bei uns eingegangen!</p>
+         <span>Bitte halte Euro bereit</span>
+         <button onclick="closeSubmitDialog()" class="order-btn">OK</button>
+        </div>
   </body>
 </html>

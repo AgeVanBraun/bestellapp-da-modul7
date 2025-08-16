@@ -51,24 +51,21 @@ function renderBasket() {
   let orderRef = document.getElementById('order_basket');
   orderRef.innerHTML = '';
 
-
   let subtotal = 0;
-  let deliveryCosts = 0;
 
   for (let index = 0; index < basket.length; index++) {
     let itemHTML = getArticleTemplate(basket[index], index);
     orderRef.innerHTML += itemHTML;
-
     subtotal += basket[index].price * basket[index].amount;
   }
 
-  let checkSwitch = document.getElementById('check');
-  if (checkSwitch && checkSwitch.checked) {
-    deliveryCosts = 4.99;
-  }
+  let mainSwitch = document.getElementById('check_main');
 
-  document.getElementById('delivery_costs').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  let deliveryCosts = mainSwitch.checked ? 4.99 : 0;
+
   document.getElementById('delivery').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery_costs').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery_overlay').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
   document.getElementById('subtotal').innerHTML = subtotal.toFixed(2).replace('.', ',') + ' €';
   document.getElementById('total_costs').innerHTML = (subtotal + deliveryCosts).toFixed(2).replace('.', ',') + ' €';
   document.getElementById('overlay_basket').innerHTML = contentRef.innerHTML;
@@ -105,7 +102,26 @@ function changeAmount(index, change) {
   renderBasket();
 }
 
-function check() {
+function check(source) {
+  let mainSwitch = document.getElementById('check_main');
+  let overlaySwitch = document.getElementById('check_overlay');
+
+  let isChecked;
+
+  if (source === 'main') {
+    isChecked = mainSwitch.checked;
+    overlaySwitch.checked = isChecked;
+  } else {
+    isChecked = overlaySwitch.checked;
+    mainSwitch.checked = isChecked;
+  }
+
+  let deliveryCosts = isChecked ? 4.99 : 0;
+  document.getElementById('delivery').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery_overlay').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+
+
+
   renderBasket();
 }
 
@@ -114,4 +130,16 @@ function trashArticle(index) {
     basket.splice(index, 1);
   }
   renderBasket();
+}
+
+function submitOrder(index){
+  document.getElementById('submit_overlay').classList.remove('d_none');
+  renderBasket();
+
+
+}
+
+function closeSubmitDialog(){
+  document.getElementById('submit_overlay').classList.add('d_none')
+
 }

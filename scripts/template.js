@@ -50,7 +50,7 @@ function getBasketTemplate(){
                     <span class="font-bold">Gesamtkosten:</span>
                     <span class="font-bold" id="total_costs">0,00 €</span>
                 </div>
-            <button class="order-btn font-bold">jetzt bestellen</button>
+            <button onclick="submitOrder()" class="order-btn font-bold">jetzt bestellen</button>
             `;
 }
 
