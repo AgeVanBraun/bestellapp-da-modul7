@@ -24,8 +24,8 @@ h1 {
   font-size: 2rem;
 }
 h3 {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 p {
   padding-top: 16px;
@@ -76,7 +76,7 @@ a:hover {
 }
 .separator-basket {
   height: 1px;
-  width: 90%;
+  width: 100%;
   background-color: rgba(128, 128, 128, 0.5);
 }
 
@@ -147,15 +147,7 @@ a:hover {
   object-fit: cover;
   z-index: -1;
 }
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 32px;
-  height: 128px;
-  background-color: rgb(40, 42, 54);
-  font-size: 1.2rem;
-}
+
 .center {
   text-align: center;
 }
@@ -169,9 +161,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 32px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin: 8px;
 }
 
 .trash-img {
@@ -211,17 +201,17 @@ footer {
   overflow-y: auto;
 }
 
-.shopping-cart-btn {
-  position: sticky;
-  bottom: 32px;
-  background-color: rgb(0, 105, 218);
-  border: 0;
-  color: whitesmoke;
-  cursor: pointer;
-  font-size: 3rem;
-  height: 64px;
-  width: 100%;
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  height: 128px;
+  background-color: rgb(40, 42, 54);
+  font-size: 1.2rem;
+
 }
-.shopping-cart-container {
-  display: none;
+
+.footer-a{
+  color: whitesmoke;
 }
