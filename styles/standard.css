@@ -14,3 +14,7 @@ html {
 .d_none {
   display: none;
 }
+
+.overflow-hidden{
+  overflow: hidden;
+}

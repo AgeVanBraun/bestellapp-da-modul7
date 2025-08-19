@@ -92,15 +92,22 @@ a:hover {
 }
 .logo-middle {
   position: absolute;
-  top: 353px;
-  left: calc(50% -150px);
-  right: 50%;
+  top: 100%;
+  transform: translateY(-50%) translateY(-5px);
   height: 150px;
+  width: 150px;
   border: 8px solid rgb(245, 245, 245);
   border-radius: 75px;
   filter: drop-shadow(5px 5px 5px black);
-  transform: translateX(-50%);
+
 }
+.logo-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+
 .slogan-title {
   margin-top: 128px;
   margin-bottom: 32px;
@@ -159,7 +166,7 @@ a:hover {
 }
 .format-basket-content {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-between;
   align-items: center;
   margin: 8px;
 }
@@ -193,11 +200,9 @@ a:hover {
 .main-content-full {
   width: 100%;
 }
-.logo-middle-full {
-  left: calc(50%);
-}
+
 .order-basket {
-  max-height: 800px;
+  max-height: 600px;
   overflow-y: auto;
 }
 
@@ -209,9 +214,8 @@ footer {
   height: 128px;
   background-color: rgb(40, 42, 54);
   font-size: 1.2rem;
-
 }
 
-.footer-a{
+.footer-a {
   color: whitesmoke;
 }

@@ -20,7 +20,7 @@
     <title>Bestellapp</title>
   </head>
 
-  <body onload="init()">
+  <body id="overflow_hidden" onload="init()">
     <header id="home">
       <div class="logo-display">
         <img class="logo-img" src="./assets/img/Logo.png" alt="" />
@@ -32,16 +32,23 @@
         />
       </div>
     </header>
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="content_wrapper">
       <section class="main-content main-content-full" id="main_content">
+        <div id="submit_overlay" class="submit-overlay d_none">
+         <h1>Deine Bestellung...</h1>
+         <p>... ist bei uns eingegangen!</p>
+         <button onclick="closeSubmitDialog()" class="order-btn">OK</button>
+        </div>
         <div class="title-nav-content">
           <img class="header-img" src="./assets/img/header.jpg" alt="Titel Bild" />
+          <div class="logo-wrapper">
           <img
             class="logo-middle logo-middle-full"
             src="./assets/img/pizza-logo-middle.png"
             alt="Kleines Logo in der mitte"
             id="logo_middle"
           />
+          </div>
           <div class="slogan-title">
             <h1>Deine Lieblingspizza – nur einen Klick entfernt.</h1>
             <p>Bewertung (4,2 von 5 Sternen)</p>
@@ -95,11 +102,6 @@
         <div id="overlay_basket" class="overlay-basket"></div>
       </div>
     </div>
-    <div id="submit_overlay" class="submit-overlay d_none">
-         <h1>Deine Bestellung...</h1>
-         <p>... ist bei uns eingegangen!</p>
-         <span>Bitte halte Euro bereit</span>
-         <button onclick="closeSubmitDialog()" class="order-btn">OK</button>
-        </div>
+
   </body>
 </html>

@@ -15,6 +15,9 @@ function toggleBasketBtn() {
 
 function toggleResCart() {
   document.getElementById('overlay').classList.toggle('d_none');
+  document.getElementById('overflow_hidden').classList.toggle('overflow-hidden');
+  document.getElementById('submit_overlay').classList.add('d_none');
+
 }
 
 function renderPizzas() {
@@ -64,10 +67,13 @@ function renderBasket() {
   let deliveryCosts = mainSwitch.checked ? 4.99 : 0;
 
   document.getElementById('delivery').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('delivery_costs').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('delivery_overlay').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery_costs').innerHTML =
+    deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery_overlay').innerHTML =
+    deliveryCosts.toFixed(2).replace('.', ',') + ' €';
   document.getElementById('subtotal').innerHTML = subtotal.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('total_costs').innerHTML = (subtotal + deliveryCosts).toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('total_costs').innerHTML =
+    (subtotal + deliveryCosts).toFixed(2).replace('.', ',') + ' €';
   document.getElementById('overlay_basket').innerHTML = contentRef.innerHTML;
 }
 
@@ -118,9 +124,8 @@ function check(source) {
 
   let deliveryCosts = isChecked ? 4.99 : 0;
   document.getElementById('delivery').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('delivery_overlay').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
-
-
+  document.getElementById('delivery_overlay').innerHTML =
+    deliveryCosts.toFixed(2).replace('.', ',') + ' €';
 
   renderBasket();
 }
@@ -132,14 +137,20 @@ function trashArticle(index) {
   renderBasket();
 }
 
-function submitOrder(index){
+function submitOrder() {
   document.getElementById('submit_overlay').classList.remove('d_none');
+  let mainSwitch = document.getElementById('check_main');
+  let overlaySwitch = document.getElementById('check_overlay');
+  mainSwitch.checked = false;
+  overlaySwitch.checked = false;
+
+  basket = [];
+
   renderBasket();
-
-
 }
 
-function closeSubmitDialog(){
-  document.getElementById('submit_overlay').classList.add('d_none')
+function closeSubmitDialog() {
+  document.getElementById('submit_overlay').classList.toggle('d_none');
+  
 
 }
