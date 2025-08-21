@@ -1,5 +1,8 @@
 'use strict';
 
+/**
+ * loads all offers and schopping cart
+ */
 function init() {
   renderPizzas();
   renderSalads();
@@ -7,18 +10,27 @@ function init() {
   renderBasket();
 }
 
+/**
+ * open and close shopping cart and audjust logo on middle
+ */
 function toggleBasketBtn() {
   document.getElementById('basket_wrapper').classList.toggle('d_none');
   document.getElementById('logo_middle').classList.toggle('logo-middle-full');
   document.getElementById('main_content').classList.toggle('main-content-full');
 }
 
+/**
+ * open and close mobile shopping cart and on or off scrollbar
+ */
 function toggleResCart() {
   document.getElementById('overlay').classList.toggle('d_none');
   document.getElementById('overflow_hidden').classList.toggle('overflow-hidden');
   document.getElementById('submit_overlay').classList.add('d_none');
 }
 
+/**
+ * renders pizzas
+ */
 function renderPizzas() {
   let contentRef = document.getElementById('pizzas_content');
   contentRef.innerHTML = '';
@@ -28,6 +40,9 @@ function renderPizzas() {
   }
 }
 
+/**
+ * renders salads
+ */
 function renderSalads() {
   let contentRef = document.getElementById('salads_content');
   contentRef.innerHTML = '';
@@ -37,6 +52,9 @@ function renderSalads() {
   }
 }
 
+/**
+ * renders drinks
+ */
 function renderDrinks() {
   let contentRef = document.getElementById('drinks_content');
   contentRef.innerHTML = '';
@@ -46,6 +64,9 @@ function renderDrinks() {
   }
 }
 
+/**
+ * renders shopping cart new and calculates item price + delivery costs = total costs
+ */
 function renderBasket() {
   let contentRef = document.getElementById('basket');
   contentRef.innerHTML = getBasketTemplate();
@@ -74,6 +95,9 @@ function renderBasket() {
   document.getElementById('overlay_basket').innerHTML = contentRef.innerHTML;
 }
 
+/**
+ * adds items to the shopping cart
+ */
 function addArticle(category, index) {
   let offerItem = myOffers[category][index];
   let foundIndex = -1;
@@ -96,6 +120,9 @@ function addArticle(category, index) {
   renderBasket();
 }
 
+/**
+ * changes the item quantity at 0 is deleted
+ */
 function changeAmount(index, change) {
   basket[index].amount += change;
 
@@ -105,6 +132,9 @@ function changeAmount(index, change) {
   renderBasket();
 }
 
+/**
+ * checks whether a switch is on or off. If one is on, then 4.99 euros
+ */
 function check(source) {
   let mainSwitch = document.getElementById('check_main');
   let overlaySwitch = document.getElementById('check_overlay');
@@ -125,6 +155,9 @@ function check(source) {
   renderBasket();
 }
 
+/**
+ * deletes items in the shopping cart
+ */
 function trashArticle(index) {
   if (basket[index].amount >= 1) {
     basket.splice(index, 1);
@@ -132,6 +165,9 @@ function trashArticle(index) {
   renderBasket();
 }
 
+/**
+ * opens the submit dialog, resets the switch and deletes the contents from the shopping cart
+ */
 function submitOrder() {
   document.getElementById('submit_overlay').classList.remove('d_none');
   document.getElementById('check_main').checked = false;
@@ -142,6 +178,9 @@ function submitOrder() {
   renderBasket();
 }
 
+/**
+ * closes submit dialog
+ */
 function closeSubmitDialog() {
   document.getElementById('submit_overlay').classList.toggle('d_none');
 }
