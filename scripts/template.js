@@ -1,6 +1,6 @@
 function getPizzaTemplate(indexOffers) {
   return `<div class="offers-box">
-            <button onclick="addArticle('Pizzas', ${indexOffers})" id="box_btn" class="box-btn">+</button>
+            <button onclick="addArticle('Pizzas', ${indexOffers})" id="box_btn_${indexOffers}" class="box-btn">+</button>
             <img class="offers-img" src=${myOffers.Pizzas[indexOffers].picture} alt="Bild von einer Pizza">
                 <div class="offers-content">
                     <h2>${myOffers.Pizzas[indexOffers].name}</h2>
@@ -11,7 +11,7 @@ function getPizzaTemplate(indexOffers) {
 }
 function getSaladTemplate(indexOffers) {
   return `<div class="offers-box">
-            <button onclick="addArticle('Salads', ${indexOffers})" id="box_btn" class="box-btn">+</button>
+            <button onclick="addArticle('Salads', ${indexOffers})" id="box_btn_${indexOffers}" class="box-btn">+</button>
             <img class="offers-img" src=${myOffers.Salads[indexOffers].picture} alt="Bild von einem Salat">
                 <div class="offers-content">
                     <h2>${myOffers.Salads[indexOffers].name}</h2>
@@ -22,7 +22,7 @@ function getSaladTemplate(indexOffers) {
 }
 function getDrinksTemplate(indexOffers) {
   return `<div class="offers-box">
-            <button onclick="addArticle('Drinks', ${indexOffers})" id="box_btn" class="box-btn">+</button>
+            <button onclick="addArticle('Drinks', ${indexOffers})" id="box_btn_${indexOffers}" class="box-btn">+</button>
             <img class="offers-img object-position-top" src=${myOffers.Drinks[indexOffers].picture} alt="Bild von einem Getränk">
                 <div class="offers-content">
                     <h2>${myOffers.Drinks[indexOffers].name}</h2>
@@ -62,7 +62,7 @@ return     `<div class="basket-item">
                     <span>${article.amount} x</span>
                     <button onclick="changeAmount(${index}, 1)" class="amount-btn">+</button>
                     <span>${article.price.toFixed(2).replace('.', ',')} €</span>
-                    <img onclick="trashArticle(${index})" class="trash-img" src=./assets/icons/trash.png alt="Bild von einer Pizza">
+                    <img onclick="trashArticle(${index})" class="trash-img" src=./assets/icons/trash.png alt="Löschen-Icon">
                 </div>
             </div>
             `;

@@ -17,7 +17,6 @@ function toggleResCart() {
   document.getElementById('overlay').classList.toggle('d_none');
   document.getElementById('overflow_hidden').classList.toggle('overflow-hidden');
   document.getElementById('submit_overlay').classList.add('d_none');
-
 }
 
 function renderPizzas() {
@@ -63,7 +62,6 @@ function renderBasket() {
   }
 
   let mainSwitch = document.getElementById('check_main');
-
   let deliveryCosts = mainSwitch.checked ? 4.99 : 0;
 
   document.getElementById('article_counter').innerHTML = basket.length
@@ -77,11 +75,11 @@ function renderBasket() {
 }
 
 function addArticle(category, index) {
-  let checkMyOffers = myOffers[category][index];
+  let offerItem = myOffers[category][index];
   let foundIndex = -1;
 
   for (let i = 0; i < basket.length; i++) {
-    if (basket[i].name === checkMyOffers.name) {
+    if (basket[i].name === offerItem.name) {
       foundIndex = i;
       break;
     }
@@ -90,8 +88,8 @@ function addArticle(category, index) {
     basket[foundIndex].amount += 1;
   } else {
     basket.push({
-      name: checkMyOffers.name,
-      price: checkMyOffers.price,
+      name: offerItem.name,
+      price: offerItem.price,
       amount: 1,
     });
   }
@@ -110,7 +108,6 @@ function changeAmount(index, change) {
 function check(source) {
   let mainSwitch = document.getElementById('check_main');
   let overlaySwitch = document.getElementById('check_overlay');
-
   let isChecked;
 
   if (source === 'main') {
@@ -123,8 +120,7 @@ function check(source) {
 
   let deliveryCosts = isChecked ? 4.99 : 0;
   document.getElementById('delivery').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('delivery_overlay').innerHTML =
-    deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery_overlay').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
 
   renderBasket();
 }
@@ -138,10 +134,8 @@ function trashArticle(index) {
 
 function submitOrder() {
   document.getElementById('submit_overlay').classList.remove('d_none');
-  let mainSwitch = document.getElementById('check_main');
-  let overlaySwitch = document.getElementById('check_overlay');
-  mainSwitch.checked = false;
-  overlaySwitch.checked = false;
+  document.getElementById('check_main').checked = false;
+  document.getElementById('check_overlay').checked = false;
 
   basket = [];
 
@@ -150,6 +144,4 @@ function submitOrder() {
 
 function closeSubmitDialog() {
   document.getElementById('submit_overlay').classList.toggle('d_none');
-
-
 }

@@ -21,17 +21,19 @@
   </head>
 
   <body id="overflow_hidden" onload="init()">
+
     <header id="home">
       <div class="logo-display">
-        <img class="logo-img" src="./assets/img/Logo.png" alt="" />
+        <img class="logo-img" src="./assets/img/Logo.png" alt="kleine Logo von der Seite" />
         <img
           onclick="toggleBasketBtn()"
           class="shopping-icon-img"
           src="./assets/icons/shopping-cart.png"
-          alt=""
+          alt="Warenkorb Icon"
         />
       </div>
     </header>
+
     <div class="content-wrapper" id="content_wrapper">
       <section class="main-content main-content-full" id="main_content">
         <div id="submit_overlay" class="submit-overlay d_none">
@@ -69,16 +71,21 @@
           <div class="drinks-content" id="drinks_content"></div>
           <div class="shopping-cart-container">
             <button onclick="toggleResCart()" class="shopping-cart-btn">
-              <img class="shopping-cart-img" src="./assets/icons/shopping-cart.png" alt="" />
+              <img
+                class="shopping-cart-img"
+                src="./assets/icons/shopping-cart.png"
+                alt="Warenkorb Icon"
+              />
               <div class="article-counter-box">
                 <span id="article_counter">0</span>
               </div>
               Warenkorb öffnen
-              <span id="cart_btn_totalCost">9,99 €</span>
+              <span id="cart_btn_totalCost">0,00 €</span>
             </button>
           </div>
         </div>
       </section>
+
       <section class="basket-wrapper d_none" id="basket_wrapper">
         <div class="basket-top">
           <h2 class="center">Warenkorb</h2>
@@ -92,6 +99,7 @@
         <div class="basket" id="basket"></div>
       </section>
     </div>
+
     <footer>
       <a class="footer-a" href="#home">Home</a>
     </footer>
