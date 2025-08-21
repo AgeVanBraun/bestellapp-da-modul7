@@ -66,14 +66,13 @@ function renderBasket() {
 
   let deliveryCosts = mainSwitch.checked ? 4.99 : 0;
 
+  document.getElementById('article_counter').innerHTML = basket.length
   document.getElementById('delivery').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('delivery_costs').innerHTML =
-    deliveryCosts.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('delivery_overlay').innerHTML =
-    deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery_costs').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('delivery_overlay').innerHTML = deliveryCosts.toFixed(2).replace('.', ',') + ' €';
   document.getElementById('subtotal').innerHTML = subtotal.toFixed(2).replace('.', ',') + ' €';
-  document.getElementById('total_costs').innerHTML =
-    (subtotal + deliveryCosts).toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('total_costs').innerHTML = (subtotal + deliveryCosts).toFixed(2).replace('.', ',') + ' €';
+  document.getElementById('cart_btn_totalCost').innerHTML = (subtotal + deliveryCosts).toFixed(2).replace('.', ',') + ' €';
   document.getElementById('overlay_basket').innerHTML = contentRef.innerHTML;
 }
 
@@ -151,6 +150,6 @@ function submitOrder() {
 
 function closeSubmitDialog() {
   document.getElementById('submit_overlay').classList.toggle('d_none');
-  
+
 
 }

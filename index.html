@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles/overlay.css" />
     <link rel="stylesheet" href="./styles/font.css" />
     <link rel="stylesheet" href="./styles/standard.css" />
-    <link rel="stylesheet" href="./styles/responsiv.css">
+    <link rel="stylesheet" href="./styles/responsiv.css" />
 
     <script src="./scripts/template.js" defer></script>
     <script src="./scripts/data.js"></script>
@@ -35,19 +35,19 @@
     <div class="content-wrapper" id="content_wrapper">
       <section class="main-content main-content-full" id="main_content">
         <div id="submit_overlay" class="submit-overlay d_none">
-         <h1>Deine Bestellung...</h1>
-         <p>... ist bei uns eingegangen!</p>
-         <button onclick="closeSubmitDialog()" class="order-btn">OK</button>
+          <h1>Deine Bestellung...</h1>
+          <p>... ist bei uns eingegangen!</p>
+          <button onclick="closeSubmitDialog()" class="order-btn">OK</button>
         </div>
         <div class="title-nav-content">
           <img class="header-img" src="./assets/img/header.jpg" alt="Titel Bild" />
           <div class="logo-wrapper">
-          <img
-            class="logo-middle logo-middle-full"
-            src="./assets/img/pizza-logo-middle.png"
-            alt="Kleines Logo in der mitte"
-            id="logo_middle"
-          />
+            <img
+              class="logo-middle logo-middle-full"
+              src="./assets/img/pizza-logo-middle.png"
+              alt="Kleines Logo in der mitte"
+              id="logo_middle"
+            />
           </div>
           <div class="slogan-title">
             <h1>Deine Lieblingspizza – nur einen Klick entfernt.</h1>
@@ -68,7 +68,14 @@
           <h1 class="offers-title" id="drinks_title">Getränke</h1>
           <div class="drinks-content" id="drinks_content"></div>
           <div class="shopping-cart-container">
-            <button onclick="toggleResCart()" class="shopping-cart-btn">Warenkorb</button>
+            <button onclick="toggleResCart()" class="shopping-cart-btn">
+              <img class="shopping-cart-img" src="./assets/icons/shopping-cart.png" alt="" />
+              <div class="article-counter-box">
+                <span id="article_counter">0</span>
+              </div>
+              Warenkorb öffnen
+              <span id="cart_btn_totalCost">9,99 €</span>
+            </button>
           </div>
         </div>
       </section>
@@ -87,21 +94,21 @@
     </div>
     <footer>
       <a class="footer-a" href="#home">Home</a>
-
     </footer>
 
     <div id="overlay" class="overlay d_none">
       <div class="shopping-cart-overlay">
-        <button onclick="toggleResCart()" class="shopping-cart-overlay-btn">Warenkorb</button>
+        <button onclick="toggleResCart()" class="shopping-cart-overlay-btn">
+          Warenkorb schließen
+        </button>
         <div class="format-basket-content">
           <span class="font-bold">Anlieferung:</span>
           <input type="checkbox" id="check_overlay" onclick="check('overlay')" />
-          <label for="check_overlay" class="switch-btn" ></label>
+          <label for="check_overlay" class="switch-btn"></label>
           <span class="font-bold" id="delivery_overlay">0,00 €</span>
         </div>
         <div id="overlay_basket" class="overlay-basket"></div>
       </div>
     </div>
-
   </body>
 </html>
