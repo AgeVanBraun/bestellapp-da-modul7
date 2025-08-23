@@ -25,6 +25,7 @@ nav {
 
 h1 {
   font-size: 2rem;
+  margin: 8px;
 }
 
 h3 {
@@ -64,6 +65,9 @@ a:hover {
 
 .main-content {
   width: calc(100% - 300px);
+}
+.main-content-full {
+  width: 100%;
 }
 
 .basket-wrapper {
@@ -223,9 +227,7 @@ a:hover {
   transform: scale(1);
 }
 
-.main-content-full {
-  width: 100%;
-}
+
 
 .order-basket {
   max-height: 400px;
