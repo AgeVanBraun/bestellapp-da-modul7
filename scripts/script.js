@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * loads all offers and schopping cart
+ * loads all offers and shopping cart
  */
 function init() {
   renderPizzas();
