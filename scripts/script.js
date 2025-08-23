@@ -15,7 +15,6 @@ function init() {
  */
 function toggleBasketBtn() {
   document.getElementById('basket_wrapper').classList.toggle('d_none');
-  document.getElementById('logo_middle').classList.toggle('logo-middle-full');
   document.getElementById('main_content').classList.toggle('main-content-full');
 }
 
@@ -117,6 +116,7 @@ function addArticle(category, index) {
       amount: 1,
     });
   }
+
   renderBasket();
 }
 
